@@ -36,13 +36,13 @@ if len(sys.argv) > 1:
         if isAudio(sys.argv[2]):
             technical(sys.argv[2])
         else:
-            print sys.argv[2], "is not an valid file."
+            print sys.argv[2], "is not a valid file."
 
     elif len(sys.argv) > 1 and sys.argv[1] == "-f":
         if isAudio(sys.argv[2]):
             full()
         else:
-            print sys.argv[2], "is not an valid file."
+            print sys.argv[2], "is not a valid file."
 
     else:
         needHelp()
