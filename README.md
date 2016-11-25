@@ -10,17 +10,19 @@ Shows audio file information. Supports MP3 (FLAC under development).
 | Option | Description |
 |--------|-------------|
 | -t     | Shows only technical info |
-| -f     | Default. Shows all info available |
+| -f     | Shows all info available |
 | -i     | Shows ID metatags |
 
-Sample output for `ainfo -t my.mp3`
+Sample output for `ainfo -t ~/my.mp3`
 
 ```
- Bitrate: 192158 
- Channels: 2
- Encoder: LAME 3.96.1+
- Mode: 1
- MPEG version: 1
- Layer: 3
- Length: 1.52 minutes
+    File: my.mp3
+    Audio offset: 0
+    Bitrate: 192 kbps
+    Encoder: LAME 3.96.1+
+    Filesize: 2184381
+    Layer: 3
+    Length: 1.52 minutes
+    Mode: 1
+    MPEG version: 1
 ```
