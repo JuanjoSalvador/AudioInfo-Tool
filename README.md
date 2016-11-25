@@ -1,10 +1,10 @@
-# ainfo
+# AudioInfo Tool
 Shows audio file information. Supports MP3 (FLAC under development).
 
 ### Basic usage
 
 ```
- $ python ainfo.py <option> /path/to/file.mp3
+ $ ainfo <option> /path/to/file.mp3
 ```
 
 | Option | Description |
@@ -14,7 +14,6 @@ Shows audio file information. Supports MP3 (FLAC under development).
 | -i     | Shows ID metatags |
 
 Sample output for `ainfo -t my.mp3`
-
 
 ```
  Bitrate: 192158 
