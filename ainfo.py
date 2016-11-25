@@ -4,7 +4,7 @@ import sys, mp3, flac
 from magic import Magic
 
 # VERSION
-VERSION = "0.2-Dev"
+VERSION = "0.3-Dev"
 
 BOLD      = '\033[1m'
 UNDERLINE = '\033[4m'
