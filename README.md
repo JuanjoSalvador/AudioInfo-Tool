@@ -1,10 +1,18 @@
 # AudioInfo Tool
 Shows audio file information. Supports MP3 and FLAC (under development).
 
+### First run and installation
+
+```
+    $ git clone https://github.com/JuanjoSalvador/AudioInfo-Tool.git
+    $ cd AudioInfo-Tool
+    $ chmod +x ainfo.py
+```
+
 ### Basic usage
 
 ```
- $ ainfo <option> /path/to/file.mp3
+ $ ./ainfo.py <option> /path/to/file
 ```
 
 | Option | Description |
@@ -26,3 +34,12 @@ Sample output for `ainfo -t ~/my.mp3`
     Mode: 1
     MPEG version: 1
 ```
+### TO DO
+* Create pip package
+* Add more audio codecs
+* Optimizing code
+
+### License
+
+MIT License
+
