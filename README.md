@@ -12,7 +12,7 @@ Until I have a PyPI package.
     $ chmod +x ainfo.py
 ```
 
-### Basic usage
+### Usage
 
 ```
  $ ./ainfo.py <option> /path/to/file
