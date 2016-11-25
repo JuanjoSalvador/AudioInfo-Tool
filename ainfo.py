@@ -32,13 +32,23 @@ def isAudio(file):
 def technical(file):
     tag = TinyTag.get(file)
     audio = MP3(file)
+
+    # Get minutes and seconds
+    m, s = divmod(int(audio.info.length), 60)
+    h, m = divmod(m, 60)
+
     print BOLD + "File:" + END, os.path.basename(file)
     print BOLD + "Audio offset:" + END, tag.audio_offset
     print BOLD + "Bitrate:" + END, tag.bitrate, "kbps"
     print BOLD + "Encoder:" + END, audio.info.encoder_info
-    print BOLD + "Filesize:" + END, tag.filesize
+    print BOLD + "Filesize:" + END, round((float(tag.filesize)/1024)/1024,2), "MiB"
     print BOLD + "Layer:" + END, audio.info.layer
-    print BOLD + "Length:" + END, round (audio.info.length / 60, 2), "minutes"
+    # Minutes and seconds
+    if h > 0:
+        print BOLD + "Length:" + END, "%02dh %02dm %02ds" % (h, m, s)
+    else:
+        print BOLD + "Length:" + END, "%02dm %02ds" % (m, s)
+
     print BOLD + "Mode:" + END, audio.info.mode
     print BOLD + "MPEG version:" + END, audio.info.version
 
