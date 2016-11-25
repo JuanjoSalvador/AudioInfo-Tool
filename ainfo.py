@@ -1,13 +1,14 @@
 #!/usr/bin/env python
 
-import sys, magic
+import sys, os
 from mutagen.mp3 import MP3
+from magic import Magic
 
 # Return true if is an audio file
 def isAudio(file):
     isAudio = False
     try:
-        mime = magic.Magic(mime=True)
+        mime = Magic(mime=True)
         mimetype = mime.from_file(file)
         typeOfFile = mimetype.split("/")
         
@@ -22,6 +23,7 @@ def isAudio(file):
 
 def technical(file):
     audio = MP3(file)
+    print "File:", os.path.basename(file)
     print "Bitrate:", audio.info.bitrate
     print "Channels:", audio.info.channels
     print "Encoder:", audio.info.encoder_info
