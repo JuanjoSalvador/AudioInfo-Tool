@@ -1,15 +1,18 @@
 # AudioInfo Tool
 Shows audio file information. Supports MP3 and FLAC (under development).
 
-### First run and installation
+### Installation
+
+Until I have a PyPI package.
 
 ```
     $ git clone https://github.com/JuanjoSalvador/AudioInfo-Tool.git
     $ cd AudioInfo-Tool
+    $ sudo pip install -r requirements.txt
     $ chmod +x ainfo.py
 ```
 
-### Basic usage
+### Usage
 
 ```
  $ ./ainfo.py <option> /path/to/file
