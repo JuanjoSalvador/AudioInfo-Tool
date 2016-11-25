@@ -5,6 +5,9 @@ from tinytag import TinyTag
 from mutagen.mp3 import MP3
 from magic import Magic
 
+# VERSION
+VERSION = "0.2-Dev"
+
 # Format vars
 BOLD =  '\033[1m'
 END  =  '\033[0m'
@@ -74,7 +77,23 @@ def full(file):
     
 
 def showHelp():
-    print "This is the HELP menu"
+    print BOLD + '\033[4m' + "AudioInfo Tool v" + VERSION + END
+    print ""
+    print "USAGE"
+    print ""
+    print "    ainfo <option> /path/to/my.mp3"
+    print ""
+    print "OPTIONS"
+    print ""
+    print "    -f      Shows full info about audio file"
+    print "    -t      Shows technical info about file"
+    print "    -i      Shows IDv2/IDv3 metatags from file"
+    print "    --help  Shows help"
+    print ""
+    print "AUTHOR"
+    print ""
+    print "    AudioInfo Tools written by Juanjo Salvador - http://juanjosalvador.es\n    View project on GitHub - http://github.com/JuanjoSalvador/ainfo"
+    print ""
 
 def needHelp():
     print "Do you need help? Try ainfo --help"
@@ -89,7 +108,7 @@ try:
         elif len(sys.argv) > 1 and sys.argv[1] == "-i":
             if isAudio(sys.argv[2]):
                 idtags(sys.argv[2])
-        elif len(sys.argv > 1) and sys.argv[1] == "--help":
+        elif len(sys.argv) > 1 and sys.argv[1] == "--help":
             showHelp()
         else:
             needHelp()
