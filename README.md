@@ -1,5 +1,5 @@
 # AudioInfo Tool
-Shows audio file information. Supports MP3 (FLAC under development).
+Shows audio file information. Supports MP3 and FLAC (under development).
 
 ### Basic usage
 
