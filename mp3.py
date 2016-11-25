@@ -2,9 +2,9 @@ import os
 from tinytag import TinyTag
 from mutagen.mp3 import MP3
 
-# Format vars
-BOLD =  '\033[1m'
-END  =  '\033[0m'
+BOLD      = '\033[1m'
+UNDERLINE = '\033[4m'
+END       = '\033[0m'
 
 def technical(file):
     tag = TinyTag.get(file)

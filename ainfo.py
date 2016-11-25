@@ -6,6 +6,10 @@ from magic import Magic
 # VERSION
 VERSION = "0.2-Dev"
 
+BOLD      = '\033[1m'
+UNDERLINE = '\033[4m'
+END       = '\033[0m'
+
 # Return true if is an audio file
 def isAudio(file):
     isAudio = False
@@ -57,7 +61,7 @@ def isAudio(file):
     
 
 def showHelp():
-    print BOLD + '\033[4m' + "AudioInfo Tool v" + VERSION + END
+    print BOLD + UNDERLINE + "AudioInfo Tool v" + VERSION + END
     print ""
     print "USAGE"
     print ""
@@ -81,7 +85,8 @@ def needHelp():
 try:
     if len(sys.argv) > 1:
         if sys.argv[1] == "-t":
-            mp3.technical(sys.argv[2])
+            if isAudio(sys.argv[2]):
+                mp3.technical(sys.argv[2])
         elif len(sys.argv) > 1 and sys.argv[1] == "-f":
             if isAudio(sys.argv[2]):
                 mp3.full(sys.argv[2])
