@@ -57,35 +57,37 @@ def needHelp():
     print "Do you need help? Try ainfo --help"
 
 try:
-    inputFile = sys.argv[2]
-    option = sys.argv[1]
-
     if len(sys.argv) > 1:
+        inputFile = sys.argv[2]
+        option    = sys.argv[1]
+
         # Technical
         if option == "-t":
             if isAudio(inputFile):
-                if typeOfAudio(inputFile) == "mp3":
+                if typeOfAudio(inputFile) == "mpeg":
                     mp3.technical(inputFile)
                 elif typeOfAudio(inputFile) == "x-flac":
                     flac.technical(inputFile)
         # Full
-        elif len(sys.argv) > 1 and option == "-f":
+        elif option == "-f":
             if isAudio(inputFile):
-                if typeOfAudio(inputFile) == "mp3":
+                if typeOfAudio(inputFile) == "mpeg":
                     mp3.full(inputFile)
                 elif typeOfAudio(inputFile) == "x-flac":
                     flac.full(inputFile)
+                else:
+                    print typeOfAudio(inputFile)
         # ID tags
-        elif len(sys.argv) > 1 and option == "-i":
+        elif option == "-i":
             if isAudio(inputFile):
-                if typeOfAudio(inputFile) == "mp3":
+                if typeOfAudio(inputFile) == "mpeg":
                     mp3.idtags(inputFile)
                 elif typeOfAudio(inputFile) == "x-flac":
                     flac.idtags(inputFile)
         # Help
-        elif len(sys.argv) > 1 and option == "--help":
+        elif option == "--help":
             showHelp()
         else:
             needHelp()
-except IndexError:
+except IndexError as e:
     needHelp()
