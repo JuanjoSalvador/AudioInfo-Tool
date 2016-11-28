@@ -57,7 +57,7 @@ def needHelp():
     print "Do you need help? Try ainfo --help"
 
 try:
-    if len(sys.argv) > 1:
+    if len(sys.argv) > 2:
         inputFile = sys.argv[2]
         option    = sys.argv[1]
 
@@ -85,9 +85,11 @@ try:
                 elif typeOfAudio(inputFile) == "x-flac":
                     flac.idtags(inputFile)
         # Help
-        elif option == "--help":
+    else:
+        if sys.argv[1] == "--help":
             showHelp()
         else:
             needHelp()
+            
 except IndexError as e:
     needHelp()
