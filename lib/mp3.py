@@ -53,7 +53,7 @@ def full(file):
     print BOLD + "Album artist:" + END, tag.albumartist
     print BOLD + "Artist:" + END, tag.artist
     print BOLD + "Audio offset:" + END, tag.audio_offset
-    print BOLD + "Bitrate:" + END, int(tag.bitrate, "kbps")
+    print BOLD + "Bitrate:" + END, int(tag.bitrate), "kbps"
     print BOLD + "Channels:" + END, audio.info.channels
     print BOLD + "Disc:" + END, tag.disc 
     print BOLD + "Encoder:" + END, audio.info.encoder_info
