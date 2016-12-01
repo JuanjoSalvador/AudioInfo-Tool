@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 
-import sys, mp3, flac
+import sys
 from magic import Magic
+from lib import mp3
+from lib import flac
 
 # VERSION
 VERSION = "0.3-Dev"
